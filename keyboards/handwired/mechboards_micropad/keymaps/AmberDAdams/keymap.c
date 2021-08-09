@@ -17,7 +17,7 @@
 
 // Defines the keycodes used by our macros in process_record_user
 enum custom_keycodes {
-  BVNDIT = SAFE_RANGE,
+  RUNLINE = SAFE_RANGE,
   SELECTTOP,
   UPPER,
   WORKPASS
@@ -25,18 +25,20 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT( /* Base */
-    BVNDIT,  SELECTTOP,  UPPER,  WORKPASS \
+    RUNLINE,  SELECTTOP,  UPPER,  WORKPASS \
   ),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case BVNDIT:
+    case RUNLINE:
       if (record->event.pressed) {
-        // when keycode BVNDIT is pressed
-        SEND_STRING("!mp group=bvndit high=25" SS_TAP(X_ENTER));
+        // when keycode RUNLINE is pressed
+        tap_code16(KC_END);
+        tap_code16(LSFT(KC_HOME));
+        tap_code16(KC_F5);
       } else {
-        // when keycode BVNDIT is released
+        // when keycode RUNLINE is released
       }
       break;
     case SELECTTOP:
@@ -58,7 +60,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case WORKPASS:
       if (record->event.pressed) {
         // when keycode WORKPASS is pressed
-        SEND_STRING("300$b7u!" SS_TAP(X_ENTER));
+        SEND_STRING("6!rL5tL&8$" SS_TAP(X_ENTER));
       } else {
         // when keycode WORKPASS is released
       }

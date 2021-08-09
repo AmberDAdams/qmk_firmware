@@ -70,7 +70,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case WRKPASS:
       if (record->event.pressed) {
         // when keycode WORKPASS is pressed
-        SEND_STRING("300$b7u!" SS_TAP(X_ENTER));
+        SEND_STRING("6!rL5tL&8$" SS_TAP(X_ENTER));
       } else {
         // when keycode WORKPASS is released
       }
