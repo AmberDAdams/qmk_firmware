@@ -23,11 +23,11 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT(
-    MO(2),   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_NUBS, KC_DEL,  KC_HOME,
+    KC_APP,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_NUBS, KC_DEL,  KC_HOME,
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_LBRC, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_SLSH, KC_BSPC,          KC_END,
     KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_QUOT, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,                    KC_GESC,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_RSFT,          KC_UP,
-    KC_LCTL,          KC_LALT,          KC_SPC,  KC_APP,           KC_SPC,           KC_LWIN,                   KC_LEFT, KC_DOWN, KC_RGHT
+    KC_LCTL,          KC_LALT,          KC_SPC,  MO(2) ,           KC_SPC,           KC_LWIN,                   KC_LEFT, KC_DOWN, KC_RGHT
   ),
 
   [1] = LAYOUT(
@@ -70,7 +70,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case WRKPASS:
       if (record->event.pressed) {
         // when keycode WORKPASS is pressed
-        SEND_STRING("6!rL5tL&8$" SS_TAP(X_ENTER));
+        SEND_STRING("y#Tv30D66?" SS_TAP(X_ENTER));
       } else {
         // when keycode WORKPASS is released
       }
